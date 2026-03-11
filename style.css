@@ -1,0 +1,402 @@
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --blue-950: 213 96% 18%;
+  --purple-600: 243 100% 62%;
+  --blue-300: 228 100% 84%;
+  --blue-200: 206 94% 87%;
+  --red-500: 354 84% 57%;
+
+  /* ### Neutral */
+
+  --grey-500: 231 11% 63%;
+  --purple-200: 229 24% 87%;
+  --blue-100: 218 100% 97%;
+  --blue-50: 231 100% 99%;
+  --white: 0 100% 100%;
+  /* form-step-card */
+}
+@font-face {
+  font-family: "Ubuntu-Regular";
+  src: url(assets/fonts/Ubuntu-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Ubuntu-Bold";
+  src: url(assets/fonts/Ubuntu-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Ubuntu-Medium";
+  src: url(assets/fonts/Ubuntu-Medium.ttf);
+  font-weight: 500;
+}
+.red {
+  outline: 3px solid red;
+}
+.outline-red {
+  outline: 3px solid red;
+}
+body {
+  font-family: "Ubuntu-Regular";
+  display: grid;
+  color: hsl(var(--grey-500));
+  place-items: start center;
+  background-color: hsl(var(--blue-100));
+  height: 100vh;
+  @media (width > 600px) {
+    place-items: center center;
+  }
+}
+input {
+  outline: 1px solid hsl(var(--grey-500) / 0.5);
+  border: none;
+  border-radius: 0.3rem;
+  padding-block: 0.4rem;
+  padding-inline-start: 1rem;
+  margin-top: 0.3rem;
+}
+.valid {
+  outline: 1px solid hsl(var(--grey-500) / 0.5);
+}
+input:hover {
+  cursor: pointer;
+  outline-color: hsl(var(--blue-950));
+}
+.invalid-1 {
+  color: red;
+  outline-color: red !important ;
+}
+
+.container {
+  display: grid;
+  gap: 1rem;
+  @media (width > 600px) {
+    background-color: hsl(var(--white));
+    grid-template-columns: 250px 1fr;
+    padding: 0.5rem;
+    max-width: 50rem;
+    min-height: 33rem;
+    border-radius: 0.5rem;
+  }
+}
+.sidebar {
+  display: flex;
+  width: 100%;
+  left: 0;
+  top: 0;
+  gap: 1.3rem;
+  color: hsl(var(--white));
+  background-color: hsl(var(--blue-950));
+  background-image: url(assets/images/bg-sidebar-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  /* place-content: center start; */
+  align-items: start;
+  padding: 2rem;
+  height: 25vh;
+  @media (width > 600px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background-image: url(assets/images/bg-sidebar-desktop.svg);
+    background-position: bottom;
+    justify-content: start;
+    align-content: start;
+    margin: 0.7rem;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    height: auto;
+  }
+}
+.sidebar-step {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+/* step content */
+.step-content {
+  display: none;
+  @media (width > 600px) {
+    font-family: "Ubuntu-Medium";
+    display: grid;
+    text-transform: uppercase;
+  }
+}
+.step-number {
+  --size: 30px;
+  font-family: "Ubuntu-Medium";
+  display: grid;
+  place-content: center;
+  color: hsl(var(--white));
+  background-color: transparent;
+  border: 1px solid hsl(var(--white));
+  /* padding: 0.2rem; */
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+}
+.step-name {
+  color: hsl(var(--grey-500));
+  font-size: 0.9rem;
+}
+.active > .step-number {
+  color: hsl(var(--blue-950));
+  background-color: hsl(var(--blue-300));
+}
+
+/* MARK: Form */
+.form-container {
+  background-color: hsl(var(--white));
+  display: grid;
+  gap: 3rem;
+  padding-block: 1rem;
+  padding-inline: 1.5rem;
+  margin-inline: 1rem;
+  margin-top: -5rem;
+  border-radius: 0.5rem;
+
+  @media (width > 600px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+/* Form Step */
+.form-step,
+.form-step-form {
+  display: grid;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+.form-step-cards {
+  display: grid;
+  gap: 1rem;
+
+  @media (width > 600px) {
+    display: flex;
+    gap: 1rem;
+  }
+}
+.form-group {
+  display: grid;
+}
+.form-group-header {
+  display: flex;
+  justify-content: space-between;
+}
+.error-message {
+  color: red;
+}
+.form-group label {
+  font-family: "Ubuntu-Medium";
+  font-size: 0.9rem;
+  color: hsl(var(--blue-950));
+}
+.form-step-title {
+  color: hsl(var(--blue-950));
+  font-family: "Ubuntu-Bold";
+  font-size: 1.3rem;
+}
+.form-next {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  bottom: 0;
+  padding: 1rem;
+  left: 0;
+  background-color: hsl(var(--white));
+  @media (width > 600px) {
+    position: relative;
+  }
+}
+.btn {
+  cursor: pointer;
+  color: hsl(var(--white));
+  background-color: hsl(var(--blue-950));
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.3rem;
+}
+.btn-2 {
+  cursor: pointer;
+  color: hsl(var(--blue-300));
+  background-color: transparent;
+  /* padding: 0.4rem 0.9rem; */
+  border: 0;
+  border-radius: 0.3rem;
+}
+/* step 2 content */
+.form-step-card {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3rem;
+  align-items: center;
+  padding: 0.6rem;
+  border: 1px solid hsl(var(--grey-500));
+  border-radius: 0.4rem;
+}
+.form-step-card:has(input[type="checkbox"]:checked) {
+  background-color: hsl(var(--blue-100));
+}
+.form-step-card input[type="checkbox"] {
+  display: none;
+}
+.form-step-card input[type="checkbox"] + label {
+  --width: 20px;
+  display: grid;
+  height: 20px;
+  width: 20px;
+  outline: 2px solid hsl(var(--grey-500) / 0.5);
+  outline-offset: -2px;
+  border-radius: 0.3rem;
+}
+.form-step-card input[type="checkbox"]:checked + label {
+  background-color: hsl(var(--purple-600));
+  background-image: url(assets/images/icon-checkmark.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: none;
+}
+
+.form-step-card:not(.selected):hover {
+  cursor: pointer;
+  outline: 1px solid hsl(var(--blue-950));
+}
+.form-step-card img {
+  width: 2rem;
+}
+.form-step-card-title {
+  font-size: 1rem;
+  color: hsl(var(--blue-950));
+  font-family: "Ubuntu-Medium";
+}
+.form-step-card-offer {
+  opacity: 0;
+  font-family: "Ubuntu-Medium";
+  color: hsl(var(--blue-950));
+  transition: opacity 0.5s;
+}
+.form-step-card-price {
+  font-size: 1rem;
+  color: hsl(var(--blue-950) / 0.7);
+}
+.form-step-option {
+  cursor: pointer;
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+  padding-block: 1rem;
+  background-color: hsl(var(--blue-100));
+  max-height: 3.5rem;
+}
+.form-step-option input {
+  display: none;
+}
+/* Hidden class */
+.hidden {
+  display: none;
+}
+.between {
+  justify-content: space-between;
+}
+.selected {
+  background-color: hsl(var(--blue-100));
+  border: 2px solid hsl(var(--blue-950));
+}
+.toggle {
+  position: relative;
+  background-color: hsl(var(--blue-950));
+  width: 49px;
+  border-radius: 2rem;
+}
+.toggle::before {
+  --width: 24px;
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: hsl(var(--white));
+  width: var(--width);
+  height: var(--width);
+  border-radius: 50%;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.form-step-option-yearly,
+.form-step-option-monthly {
+  font-weight: 900;
+  transition: color 0.2s linear;
+}
+input:checked ~ .toggle:before {
+  left: auto;
+  transform: translateX(25px); /* Move 25px to the right */
+}
+input:checked ~ .form-step-option-yearly {
+  color: hsl(var(--blue-950));
+}
+
+.form-step-option-monthly:has(+ input:not(:checked)) {
+  color: hsl(var(--blue-950));
+}
+
+/*MARK: Summary Page 4 start*/
+
+.form-summary {
+  display: grid;
+  gap: 1rem;
+}
+.form-summary-plan {
+  font-weight: 700;
+  color: hsl(var(--blue-950));
+}
+.form-summary a {
+  color: hsl(var(--grey-500));
+  font-weight: 400;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.form-summary-service-price {
+  color: hsl(var(--blue-950));
+}
+.form-summary-total-price {
+  color: hsl(var(--purple-600));
+  font-weight: 700;
+}
+/* step 5 thank you */
+.thank-you-container {
+  padding-block: 3rem;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+}
+.thank-you-title {
+  font-family: "Ubuntu-Bold";
+  color: hsl(var(--blue-950));
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media (min-width: 600px) {
+  .form-step-cards > * {
+    display: grid;
+  }
+}
+/* attribution */
+.attribution {
+  display: none;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

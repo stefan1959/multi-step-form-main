@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="stylesheet" href="reset.css" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <sidebar class="sidebar">
+        <!-- Sidebar start -->
+        <div id="step-1" class="sidebar-step active">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <div class="step-name">Step 1</div>
+            <div class="step-description">Your info</div>
+          </div>
+        </div>
+        <div id="step-2" class="sidebar-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-name">Step 2</div>
+            <div class="step-description">Select plan</div>
+          </div>
+        </div>
+        <div id="step-3" class="sidebar-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <div class="step-name">Step 3</div>
+            <div class="step-description">Add-ons</div>
+          </div>
+        </div>
+        <div id="step-4" class="sidebar-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <div class="step-name">Step 4</div>
+            <div class="step-description">Summary</div>
+          </div>
+        </div>
+        <!-- Sidebar end -->
+      </sidebar>
+      <div class="form-container">
+        <!-- Step 1 start -->
+        <section class="form-step">
+          <!-- Step 1 start -->
+          <div class="form-step-title">Personal info</div>
+          <div class="form-step-description">
+            Please provide your name, email address, and phone number.
+          </div>
+          <form class="form-step-form">
+            <div class="form-group">
+              <div class="form-group-header">
+                <label for="name">Name</label>
+                <div id="nameError" class="error-message hidden">
+                  This Field Required
+                </div>
+              </div>
+              <input type="text" id="name" placeholder="e.g. Stephen King" />
+            </div>
+            <div class="form-group">
+              <div class="form-group-header">
+                <label for="email">Email Address</label>
+                <div id="emailError" class="error-message hidden">
+                  This Field Required
+                </div>
+              </div>
+              <input
+                id="email"
+                type="email"
+                placeholder="e.g. stephenking@lorem.com"
+              />
+            </div>
+            <div class="form-group">
+              <div class="form-group-header">
+                <label for="phone">Phone Number</label>
+                <div id="phoneError" class="error-message hidden">
+                  This Field Required
+                </div>
+              </div>
+              <input id="phone" type="tel" placeholder="e.g. +1 234 567 890" />
+            </div>
+          </form>
+          <!-- Step 1 end -->
+          <div class="form-next"><button class="btn">Next Step</button></div>
+        </section>
+        <!-- Step 2 start -->
+        <section class="form-step hidden">
+          <div class="form-step-title">Select your plan</div>
+          <div class="form-step-description">
+            You have the option of monthly or yearly billing.
+          </div>
+          <div class="form-step-cards">
+            <div id="Arcade" class="form-step-card selected">
+              <img src="assets/images/icon-arcade.svg" alt="Arcade" />
+              <div class="form-step-card-content">
+                <div class="form-step-card-title">Arcade</div>
+                <div class="form-step-card-price" monthly="$9" yearly="$90">
+                  $9/mo
+                </div>
+                <div class="form-step-card-offer">2 Months Free</div>
+              </div>
+            </div>
+            <div id="Advanced" class="form-step-card">
+              <img src="assets/images/icon-advanced.svg" alt="Advanced" />
+              <div class="form-step-card-content">
+                <div class="form-step-card-title">Advanced</div>
+                <div class="form-step-card-price" monthly="$12" yearly="$120">
+                  $12/mo
+                </div>
+                <div class="form-step-card-offer">2 Months Free</div>
+              </div>
+            </div>
+            <div id="Pro" class="form-step-card">
+              <img src="assets/images/icon-pro.svg" alt="Pro" />
+              <div class="form-step-card-content">
+                <div class="form-step-card-title">Pro</div>
+                <div class="form-step-card-price" monthly="$15" yearly="$150">
+                  $15/mo
+                </div>
+                <div class="form-step-card-offer">2 Months Free</div>
+              </div>
+            </div>
+          </div>
+          <label class="form-step-option">
+            <div class="form-step-option-monthly">Monthly</div>
+            <input
+              id="form-option"
+              class="form-step-option-input"
+              type="checkbox"
+            />
+            <div class="toggle"></div>
+            <div class="form-step-option-yearly">Yearly</div>
+          </label>
+          <!-- Step 2 end -->
+          <div class="form-next between">
+            <button class="btn-2">Go Back</button
+            ><button class="btn">Next Step</button>
+          </div>
+        </section>
+        <!-- Step 2 end -->
+        <section class="form-step hidden">
+          <!-- Step 3 start -->
+          <div class="form-step-title">Pick add-ons</div>
+          <div class="form-step-description">
+            Add-ons help enhance your gaming experience.
+          </div>
+          <div id="Online_Service" class="form-step-card">
+            <input id="OnlineService" class="form-step-addon" type="checkbox" />
+            <label for="OnlineService"></label>
+            <div class="form-step-card-content">
+              <div class="form-step-card-title">Online service</div>
+              <div>Access to multiplayer games</div>
+            </div>
+            <div class="form-step-card-extra" monthly="+$1/mo" yearly="+$10/yr">
+              +$1/mo
+            </div>
+          </div>
+          <div class="form-step-card">
+            <input id="LargerStorage" class="form-step-addon" type="checkbox" />
+            <label for="LargerStorage"></label>
+            <div class="form-step-card-content">
+              <div class="form-step-card-title">Larger storage</div>
+              <div>Extra 1TB of cloud save</div>
+            </div>
+            <div class="form-step-card-extra" monthly="+$2/mo" yearly="+$20/yr">
+              +$2/mo
+            </div>
+          </div>
+          <div class="form-step-card">
+            <input
+              id="CustomizableProfile"
+              class="form-step-addon"
+              type="checkbox"
+            />
+            <label for="CustomizableProfile"></label>
+            <div class="form-step-card-content">
+              <div class="form-step-card-title">Customizable Profile</div>
+              <div>Custom theme on your profile</div>
+            </div>
+            <div class="form-step-card-extra" monthly="+$2/mo" yearly="+$20/yr">
+              +$2/mo
+            </div>
+          </div>
+          <div class="form-next between">
+            <button class="btn-2">Go Back</button>
+            <button class="btn" id="finish">Next Step</button>
+          </div>
+          <!-- Step 3 end -->
+        </section>
+        <section class="form-step hidden">
+          <!-- Step 4 start -->
+          <div class="form-step-title">Finishing up</div>
+          <div class="form-step-description">
+            Double-check everything looks OK before confirming.
+          </div>
+          <div class="form-summary">
+            <div class="form-summary-plan flex-between">
+              <div id="plan-selected" class="form-summary-plan-name">
+                Arcade (Yearly)
+                <div class="form-summary-plan-change">
+                  <a onclick="change()" id="change" href="#">Change</a>
+                </div>
+              </div>
+              <div id="plan-select-price" class="form-summary-plan-price">
+                $90
+              </div>
+            </div>
+            <div id="final-add-ons">
+              <div class="form-summary-service flex-between">
+                Online Service
+                <div class="form-summary-service-price">+$10</div>
+              </div>
+              <div class="form-summary-addOn flex-between">
+                Large storage
+                <div class="form-summary-service-price">+$20</div>
+              </div>
+            </div>
+            <div id="total-price" class="form-summary-total flex-between">
+              Total (per year)
+              <div class="form-summary-total-price">+$120/yr</div>
+            </div>
+          </div>
+
+          <div class="form-next between">
+            <button class="btn-2">Go Back</button>
+            <button class="btn">Confirm</button>
+          </div>
+          <!-- Step 4 end -->
+        </section>
+        <section class="form-step hidden">
+          <!-- Step 5 start -->
+          <div class="thank-you-container">
+            <img
+              src="/assets/images/icon-thank-you.svg"
+              width="40px"
+              height="40px"
+              alt=""
+            />
+            <h3 class="thank-you-title">Thank you!</h3>
+            <div class="thank-you">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </div>
+          </div>
+          <!-- Step 5 end -->
+        </section>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Stephen Petersen</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
