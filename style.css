@@ -33,12 +33,15 @@
   src: url(assets/fonts/Ubuntu-Medium.ttf);
   font-weight: 500;
 }
+/* for dev */
 .red {
   outline: 3px solid red;
 }
 .outline-red {
   outline: 3px solid red;
 }
+
+/* end for dev */
 body {
   font-family: "Ubuntu-Regular";
   display: grid;
@@ -84,6 +87,7 @@ input:hover {
   }
 }
 .sidebar {
+  outline: 1px solid;
   display: flex;
   width: 100%;
   left: 0;
@@ -163,6 +167,7 @@ input:hover {
   @media (width > 800px) {
     margin-top: 0;
     margin-bottom: 0;
+    min-height: 550pxpx;
   }
 }
 /* Form Step */
@@ -176,9 +181,10 @@ input:hover {
   display: grid;
   gap: 1rem;
 
-  @media (width > 600px) {
+  @media (width > 800px) {
     display: flex;
     gap: 1rem;
+    justify-content: space-evenly;
   }
 }
 .form-group {
@@ -210,36 +216,36 @@ input:hover {
   padding: 1rem;
   left: 0;
   background-color: hsl(var(--white));
-  @media (width > 600px) {
+  @media (width > 800px) {
     position: relative;
   }
 }
 .btn {
   cursor: pointer;
   color: hsl(var(--white));
-  max-height: 2.5rem;
+  max-height: 2.8rem;
   background-color: hsl(var(--blue-950));
   padding: 0.4rem 0.9rem;
   border-radius: 0.3rem;
 }
 .btn-2 {
   cursor: pointer;
-  color: hsl(var(--blue-300));
+  color: hsl(var(--blue-950));
   background-color: transparent;
-  /* padding: 0.4rem 0.9rem; */
+  max-height: 2.8rem;
   border: 0;
-  border-radius: 0.3rem;
 }
 /* step 2 content */
 .form-step-card {
   font-size: 0.8rem;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   gap: 0.3rem;
-  align-items: center;
   padding: 0.6rem;
   border: 1px solid hsl(var(--grey-500));
   border-radius: 0.4rem;
+  align-items: center;
 }
 .form-step-card:has(input[type="checkbox"]:checked) {
   background-color: hsl(var(--blue-100));
