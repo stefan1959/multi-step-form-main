@@ -71,11 +71,7 @@ btnBack.forEach((btnBack) => {
 for (let i = 0; i < formAddon.length; i++) {
   const ele = formAddon[i];
   ele.addEventListener("click", () => {
-    if (ele.checked) {
-      addOns[ele.id] = true;
-    } else {
-      addOns[ele.id] = false;
-    }
+    ele.checked ? (addOns[ele.id] = true) : (addOns[ele.id] = false);
   });
 }
 
@@ -88,8 +84,7 @@ function hidePage() {
 function showPage() {
   formNext[currentStep].classList.remove("hidden");
   sideBarStep[currentStep].classList.add("active");
-  if (currentStep == 3) {
-    console.log("lets create page");
+  if (currentStep === 3) {
     document.getElementById("plan-selected").innerHTML =
       `${planSet}(${yearlySet === false ? "Monthly" : "Yearly"})<br>
       <div class="form-summary-plan-change"><a onclick="change()" id="change" href="#">Change</a></div>
@@ -112,15 +107,13 @@ phone.addEventListener("click", () => {
 });
 email.addEventListener("input", (e) => {
   clearErrors();
-  if (validateEmail(email.value)) {
-    email.classList.remove("invalid-1");
-    email.classList.add("valid");
-    emailOK = true;
-  } else {
-    email.classList.add("invalid-1");
-    email.classList.remove("valid");
-    emailOK = false;
-  }
+  validateEmail(email.value)
+    ? (email.classList.remove("invalid-1"),
+      email.classList.add("valid"),
+      (emailOK = true))
+    : (email.classList.add("invalid-1"),
+      email.classList.remove("valid"),
+      (emailOK = false));
 });
 function change() {
   hidePage();
