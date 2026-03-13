@@ -52,6 +52,7 @@ formOption.addEventListener("change", () => {
 // Button listeners
 btn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    validateEmail(email.value);
     if (!checkFields()) {
       return;
     }
@@ -108,12 +109,8 @@ phone.addEventListener("click", () => {
 email.addEventListener("input", (e) => {
   clearErrors();
   validateEmail(email.value)
-    ? (email.classList.remove("invalid-1"),
-      email.classList.add("valid"),
-      (emailOK = true))
-    : (email.classList.add("invalid-1"),
-      email.classList.remove("valid"),
-      (emailOK = false));
+    ? (email.classList.remove("invalid-1"), email.classList.add("valid"))
+    : (email.classList.add("invalid-1"), email.classList.remove("valid"));
 });
 function change() {
   hidePage();
@@ -124,6 +121,7 @@ function change() {
 //check email validation
 function validateEmail(email) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  emailOK = emailRegex.test(email);
   return emailRegex.test(email);
 }
 // Cech input fields for errors or empty
