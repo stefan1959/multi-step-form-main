@@ -11,7 +11,7 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-
+    <!-- aria-label for accessibility -->
     <title>Frontend Mentor | Multi-step form</title>
     <link rel="stylesheet" href="reset.css" />
 
@@ -65,7 +65,12 @@
             <div class="form-group">
               <div class="form-group-header">
                 <label for="name">Name</label>
-                <div id="nameError" class="error-message hidden">
+                <div
+                  id="nameError"
+                  class="error-message hidden"
+                  role="alert"
+                  aria-live="assertive"
+                >
                   This Field Required
                 </div>
               </div>
@@ -156,9 +161,11 @@
         <!-- Step 2 end -->
         <section class="form-step hidden">
           <!-- Step 3 start -->
-          <div class="form-step-title">Pick add-ons</div>
-          <div class="form-step-description">
-            Add-ons help enhance your gaming experience.
+          <div class="form-step-header">
+            <div class="form-step-title">Pick add-ons</div>
+            <div class="form-step-description">
+              Add-ons help enhance your gaming experience.
+            </div>
           </div>
           <div id="Online_Service" class="form-step-card">
             <input id="OnlineService" class="form-step-addon" type="checkbox" />
@@ -203,32 +210,50 @@
           </div>
           <!-- Step 3 end -->
         </section>
-        <section class="form-step hidden">
+        <section class="form-step align-content-start template hidden">
           <!-- Step 4 start -->
-          <div class="form-step-title">Finishing up</div>
-          <div class="form-step-description">
-            Double-check everything looks OK before confirming.
+          <div class="form-step-header">
+            <div class="form-step-title">Finishing up</div>
+            <div class="form-step-description">
+              Double-check everything looks OK before confirming.
+            </div>
           </div>
           <div class="form-summary">
-            <div class="form-summary-plan flex-between">
-              <div id="plan-selected" class="form-summary-plan-name">
-                Arcade (Yearly)
-                <div class="form-summary-plan-change">
-                  <a onclick="change()" id="change" href="#">Change</a>
+            <div class="form-summary-items">
+              <div
+                class="form-summary-plan flex-between"
+                role="region"
+                aria-labelledby="plan-selected">
+                <div id="plan-selected" class="form-summary-plan-name">
+                  Arcade (Yearly)
+                  <div class="form-summary-plan-change">
+                    <a
+                      onclick="change()"
+                      id="change"
+                      href="#"
+                      role="button"
+                      aria-label="Change plan"
+                      >Change</a
+                    >
+                  </div>
+                </div>
+                <div
+                  id="plan-select-price"
+                  class="form-summary-plan-price"
+                  aria-live="polite"
+                >
+                  $90
                 </div>
               </div>
-              <div id="plan-select-price" class="form-summary-plan-price">
-                $90
-              </div>
-            </div>
-            <div id="final-add-ons">
-              <div class="form-summary-service flex-between">
-                Online Service
-                <div class="form-summary-service-price">+$10</div>
-              </div>
-              <div class="form-summary-addOn flex-between">
-                Large storage
-                <div class="form-summary-service-price">+$20</div>
+              <div id="final-add-ons">
+                <div class="form-summary-service flex-between">
+                  Online Service
+                  <div class="form-summary-service-price">+$10</div>
+                </div>
+                <div class="form-summary-addOn flex-between">
+                  Large storage
+                  <div class="form-summary-service-price">+$20</div>
+                </div>
               </div>
             </div>
             <div id="total-price" class="form-summary-total flex-between">

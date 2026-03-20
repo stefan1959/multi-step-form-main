@@ -42,11 +42,7 @@ const YearlyValues = {
 
 // page 2
 formOption.addEventListener("change", () => {
-  if (formOption.checked) {
-    yearlySelect();
-  } else {
-    monthlySelect();
-  }
+  formOption.checked ? yearlySelect() : monthlySelect();
 });
 
 // Button listeners
