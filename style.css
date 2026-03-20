@@ -351,6 +351,7 @@ input:checked ~ .form-step-option-yearly {
 
 .form-summary {
   display: grid;
+  padding-block: 1rem;
   gap: 1rem;
   grid-template-rows: 1fr 50px;
 }
