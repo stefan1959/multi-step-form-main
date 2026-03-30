@@ -89,10 +89,8 @@ function showPage() {
     document.getElementById("plan-select-price").innerHTML =
       `$${priceSet}/${yearlySet ? "yr" : "mo"}`;
     addAddon();
-    console.log(addonTotal);
     totalPriceValue = priceSet + addonTotal;
-    totalPrice.innerHTML = `Total (${yearlySet ? "per year" : "per month"})\n              <div id="total-price" class="form-summary-total-price">$${totalPriceValue}</div>\n            `;
-    // totalPriceTxt.innerHTML = `(${yearlySet ? "per year" : "per month"})`;
+    totalPrice.innerHTML = `Total (${yearlySet ? "per year" : "per month"})\n              <div id="total-price" class="form-summary-total-price">$${totalPriceValue}${yearlySet ? "/yr" : "/mo"}</div>\n            `;
   }
 }
 // listen for a click Form - name field
@@ -124,12 +122,15 @@ function validateEmail(email) {
 function checkFields() {
   if (!nameInput.value) {
     nameError.classList.remove("hidden");
+    nameInput.style.outlineColor = "hsl(var(--red-500))";
     return false;
   } else if (!emailOK) {
     emailError.classList.remove("hidden");
+    email.style.outlineColor = "hsl(var(--red-500))";
     return false;
   } else if (!phone.value) {
     phoneError.classList.remove("hidden");
+    phone.style.outlineColor = "hsl(var(--red-500))";
     false;
   } else {
     return true;
@@ -138,8 +139,11 @@ function checkFields() {
 
 function clearErrors() {
   emailError.classList.add("hidden");
+  email.style.outlineColor = "inherit";
   nameError.classList.add("hidden");
+  nameInput.style.outlineColor = "inherit";
   phoneError.classList.add("hidden");
+  phone.style.outlineColor = "inherit";
 }
 
 function yearlySelect() {

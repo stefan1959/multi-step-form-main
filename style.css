@@ -18,6 +18,7 @@
   --white: 0 100% 100%;
   /* form-step-card */
 }
+
 @font-face {
   font-family: "Ubuntu-Regular";
   src: url(assets/fonts/Ubuntu-Regular.ttf);
@@ -146,7 +147,7 @@ input:hover {
   background-color: hsl(var(--blue-300));
   border-color: hsl(var(--blue-300));
 }
-
+/* MARK: */
 .form-container {
   background-color: hsl(var(--white));
   display: grid;
@@ -156,18 +157,18 @@ input:hover {
   margin-inline: 1rem;
   margin-top: -5rem;
   border-radius: 0.5rem;
+  min-height: 450px;
 
   @media (width > 800px) {
     padding-inline: 1rem;
     margin-top: 0;
     margin-bottom: 0;
-    min-height: 550pxpx;
   }
   @media (width > 1000px) {
     padding-inline: 4rem;
   }
 }
-/* Form Step */
+/* Form Step MARK:***  */
 .form-step,
 .form-step-form {
   display: grid;
@@ -177,11 +178,11 @@ input:hover {
 .form-step-cards {
   display: grid;
   gap: 1rem;
-
+  
   @media (width > 800px) {
     display: flex;
     gap: 1rem;
-    justify-content: space-evenly;
+    margin-top: 1rem;
   }
 }
 .form-group {
@@ -208,15 +209,17 @@ input:hover {
   position: absolute;
   display: flex;
   justify-content: end;
+  align-items: center;
   width: 100%;
   bottom: 0;
-  padding-top: 1rem;
+  padding: 1rem;
   left: 0;
   background-color: hsl(var(--white));
   @media (width > 800px) {
     position: relative;
   }
 }
+/*buttons */
 .btn {
   cursor: pointer;
   color: hsl(var(--white));
@@ -230,6 +233,10 @@ input:hover {
   color: hsl(var(--blue-950));
   background-color: transparent;
   max-height: 2.8rem;
+  border: 0;
+}
+.btn-3 {
+  background-color: hsl(var(--purple-600));
   border: 0;
 }
 /* step 2 content */
@@ -289,11 +296,16 @@ input:hover {
   font-size: 1rem;
   color: hsl(var(--blue-950) / 0.7);
 }
+.form-step-card-extra {
+  color: hsl(var(--purple-600));
+}
 .form-step-option {
   cursor: pointer;
   display: flex;
   gap: 0.4rem;
   justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
   padding-block: 1rem;
   background-color: hsl(var(--blue-100));
   max-height: 3.5rem;
@@ -398,19 +410,8 @@ input:checked ~ .form-step-option-yearly {
 @media (min-width: 800px) {
   .form-step-cards > * {
     display: grid;
+    gap: 2.5rem;
   }
-}
-/* attribution */
-.attribution {
-  position: absolute;
-  bottom: 1.3rem;
-  color: hsl(var(--blue-950));
-  font-size: 11px;
-  text-align: center;
-  max-width: 40vw;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
 }
 
 .red {
